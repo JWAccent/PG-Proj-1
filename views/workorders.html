@@ -1,5 +1,8 @@
 ﻿<div data-options="dxView : { name: 'workorders', title: 'Work Orders' } " >
     <div class="workorder-view"  data-options="dxContent : { targetPlaceholder: 'content' } " >
-        <p>These are the current work orders</p>
+    	<p><b>Current Work Orders</b></p>
+		<div data-bind="dxList: { dataSource: dataSource }">
+            <div data-options="dxTemplate : { name: 'item' }"  data-bind="text: name, dxAction: '#workorderdetails/{id}'"></div>
+        </div>
     </div>
 </div>

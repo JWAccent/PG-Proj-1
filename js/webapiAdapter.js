@@ -1,6 +1,6 @@
 ﻿MyApp.adapters.RestAdapter = function () {
 
-    var serviceUrl = app.settings.endpoint + 'workorders';
+    var serviceUrl = MyApp.settings.endpoint + 'workorders';
 
     this.getAllWorkOrders = function (callback) {
 

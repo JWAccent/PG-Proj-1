@@ -3,9 +3,10 @@
 
     var MyApp = window.MyApp = { 
       adapters: {},
+      models: {},
 
       settings: {
-       endpoint : 'http://localhost:60189/api/'
+       endpoint : 'http://client.varasset.com/mxamservice/api/'
       },
 
       showAlert: function (message, title) {
@@ -17,10 +18,6 @@
       },
 
     };
-
-    MyApp.showAlert('Hey', 'hey');
-
-    DevExpress.devices.current({ platform: "generic" });
 
     $(function() {
         MyApp.app = new DevExpress.framework.html.HtmlApplication({
@@ -51,7 +48,7 @@
             ]
         });
         
-        MyApp.app.router.register(":view", { view: "home" });
+        MyApp.app.router.register(":view/:id", { view: "home", id: undefined });
         MyApp.app.navigate();
     });
 
