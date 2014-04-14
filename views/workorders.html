@@ -8,8 +8,26 @@
 		<ul id="list" data-role="listview" data-source="dataSource" data-template="tmp"></ul>
 	</div>
 	
+	<div data-role="view" id="details" data-layout="default" data-transition="overlay:up">
+        <header data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" data-align="left">Back</a>
+                <span data-role="view-title">Work Order Details</span>
+            </div>
+        </header>
+		
+        <div data-role="content">
+		There are no details about this work order.
+        </div>
+    </div>
+	
 	<script id="tmp" type="text/x-kendo-template">
-		#: WorkOrderId #
+	    <a
+            class="details-link"
+            data-role="listview-link"
+            href="\#details?id=#:Id#">
+            <h2>#: WorkOrderId #</h2>
+        </a>
 	</script>
 
 	<script>
