@@ -1,8 +1,35 @@
-﻿<div data-options="dxView : { name: 'workorders', title: 'Work Orders' } " >
-    <div class="workorder-view"  data-options="dxContent : { targetPlaceholder: 'content' } " >
-    	<p><b>Current Work Orders</b></p>
-		<div data-bind="dxList: { dataSource: dataSource }">
-            <div data-options="dxTemplate : { name: 'item' }"  data-bind="text: name, dxAction: '#workorderdetails/{id}'"></div>
-        </div>
-    </div>
-</div>
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Work Orders</title>
+</head>
+<body>
+	<div id="about" data-role="view" data-layout="default">
+		<ul id="list" data-role="listview" data-source="dataSource" data-template="tmp"></ul>
+	</div>
+	
+	<script id="tmp" type="text/x-kendo-template">
+		#: WorkOrderId #
+	</script>
+
+	<script>
+		var dataSource = new kendo.data.DataSource({
+				data: "items",
+				schema: { 
+						model:{
+							id: "Id"
+						}
+				},
+				transport: {
+					read: {
+						url: "http://client.varasset.com/mxamservice/api/workorders", 
+						dataType: "json" 
+					}
+				}				
+			});
+	</script>
+	
+</body>
+</html>
+
+
