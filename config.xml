@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns       = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
-        id          = "com.accent.employeedirectory"
+        id          = "org.coenraets.employeedirectory"
         versionCode = "10"
         version     = "1.1.0">
  
-    <name>Employee Directory</name>
+    <name>Work Orders</name>
  
     <description>
-        A simple employee directory application
+        A simple MXAM work order prototype.
     </description>
  
-    <author href="http://www.accent-inc.com" email="john.wright@accent-inc.com">
-        John Wright
+    <author href="http://accent-int.com" email="">
+        Accent
     </author>
  
     <feature name="http://api.phonegap.com/1.0/camera"/>

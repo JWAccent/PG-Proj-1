@@ -1,45 +1,63 @@
+<!DOCTYPE html>
 <html>
-<link href="css/styles.css" rel="stylesheet">
+<head>
+    <title>MyApp</title>
+        
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    <!-- This script is added by PhoneGap build -->
+    <!-- <script type="text/javascript" src="cordova.js"></script> -->
+    
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <![endif]-->
+    <!--[if gte IE 9]><!-->
+    <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+    <!--<![endif]-->
+    
+    <script type="text/javascript" src="js/knockout-3.0.0.js"></script>
+    <script type="text/javascript" src="js/globalize.min.js"></script>
+
+    <script type="text/javascript" src="js/dx.phonejs.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/dx.common.css" />
+    <link rel="stylesheet" type="text/css" href="css/dx.ios.default.css" />
+    <link rel="stylesheet" type="text/css" href="css/dx.android.holo-light.css" />
+    <link rel="stylesheet" type="text/css" href="css/dx.win8.black.css" />
+    <link rel="stylesheet" type="text/css" href="css/dx.tizen.white.css" />
+    <link rel="stylesheet" type="text/css" href="css/dx.generic.light.css" />
+
+    <!-- App -->
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <script type="text/javascript" src="index.js"></script>    
+
+    <!-- Layouts -->
+    <script type="text/javascript" src="layouts/SlideOut/SlideOutLayout.js"></script>
+    <link rel="stylesheet" type="text/css" href="layouts/SlideOut/SlideOutLayout.css" />
+    <link rel="dx-template" type="text/html" href="layouts/SlideOut/SlideOutLayout.html"/>
+
+    <!-- App views -->
+    <link rel="stylesheet" type="text/css" href="views/home.css" />
+    <script type="text/javascript" src="views/home.js"></script>
+    <link rel="dx-template" type="text/html" href="views/home.html"/>
+
+    <link rel="stylesheet" type="text/css" href="views/workorders.css" />
+    <script type="text/javascript" src="views/workorders.js"></script>
+    <link rel="dx-template" type="text/html" href="views/workorders.html"/>
+
+    <!-- models -->
+    <script src="js/WorkOrderModel.js"></script>
+
+    <!-- adapters -->
+    <script src="js/webapiAdapter.js"></script>
+</head>
 <body>
 
-<script id="home-tpl" type="text/x-handlebars-template">
-    <div class='header'><h1>Home</h1></div>
-    <div class='search-bar'><input class='search-key' type="search"/></div>
-    <div class="scroll"><ul class='employee-list'></ul></div>
-</script>
+    <div class="dx-viewport"></div>
 
-<script id="employee-li-tpl" type="text/x-handlebars-template">
-    {{#.}}
-    <li><a href="#employees/{{this.id}}">{{this.firstName}} {{this.lastName}}<br/>{{this.title}}</a></li>
-    {{/.}}
-</script>
-
-<script id="employee-tpl" type="text/x-handlebars-template">
-    <div class='header'><a href='#' class="button header-button header-button-left">Back</a><h1>Details</h1></div>
-    <div class='details'>
-        <img class='employee-image' src='img/{{firstName}}_{{lastName}}.jpg' />
-        <h1>{{firstName}} {{lastName}}</h1>
-        <h2>{{title}}</h2>
-        <span class="location"></span>
-        <ul>
-            <li><a href="tel:{{officePhone}}">Call Office<br/>{{officePhone}}</a></li>
-            <li><a href="tel:{{cellPhone}}">Call Cell<br/>{{cellPhone}}</a></li>
-            <li><a href="sms:{{cellPhone}}">SMS<br/>{{cellPhone}}</a></li>
-			<li><a href="#" class="add-location-btn">Add Location</a></li>
-			<li><a href="#" class="add-contact-btn">Add to Contacts</a></li>
-			<li><a href="#" class="change-pic-btn">Change Picture</a></li>
-        </ul>
-    </div>
-</script>
-
-
-<script src="css/source-sans-pro.js"></script>
-<script src="lib/handlebars.js"></script>
-<script src="lib/jquery-1.8.2.min.js"></script>
-<script src="js/storage/websql-store.js"></script>
-<script src="js/HomeView.js"></script>
-<script src="js/EmployeeView.js"></script>
-<script src="js/main.js"></script>
-
+    <script src="js/phonegap.js"></script>
 </body>
 </html>
