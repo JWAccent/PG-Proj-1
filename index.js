@@ -18,6 +18,8 @@
 
     };
 
+    MyApp.showAlert('Hey', 'hey');
+
     DevExpress.devices.current({ platform: "generic" });
 
     $(function() {
